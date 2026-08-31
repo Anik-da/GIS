@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #020617;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Cesium container fills its parent */
+.cesium-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Hide default Cesium UI elements we don't use */
+.cesium-viewer-bottom,
+.cesium-widget-credits {
+  display: none !important;
+}
+
+/* Custom scrollbar for layer panels */
+.cesium-container + * ::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  width: 5px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.3);
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.6);
+  border-radius: 3px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}
+
+/* Cesium credit text shrink */
+.cesium-widget-credits a,
+.cesium-credit-textContainer {
+  font-size: 9px;
+  opacity: 0.5;
+}
